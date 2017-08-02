@@ -1,0 +1,24 @@
+<head>
+  <title>know-now</title>
+</head>
+
+<body>
+  <h1>Know-now!</h1>
+  {{> listStatus}}
+
+  {{> novoStatus}}
+</body>
+
+<template name="novoStatus">
+    <select id="local">
+        <option value="pao">Pão de açucar</option>
+        <option value="cristo">Cristo Redentor</option>
+        <option value="ipanema">Praia de Ipanema</option>
+        <option value="jardim">Jardim botânico</option>
+    </select>
+    <br/><br/>
+    Como está?<br/>
+    <input id="status">
+    <br/>
+    <button>Enviar status</button>
+</template>
