@@ -1,13 +1,29 @@
 <template name="newStatus">
-    <select id="local">
-        <option value="pao">Pão de açucar</option>
-        <option value="cristo">Cristo Redentor</option>
-        <option value="ipanema">Praia de Ipanema</option>
-        <option value="jardim">Jardim botânico</option>
-    </select>
-    <br/><br/>
-    Como está?<br/>
-    <input id="status">
-    <br/>
-    <button>Enviar status</button>
+  <div class="row">
+      <form class="col s12">
+        <div class="row">
+          <div class="input-field col s12">
+          <select id="local">
+              <option value="" disabled selected>Escolha o local</option>
+              <option value="pao">Pão de açucar</option>
+              <option value="cristo">Cristo Redentor</option>
+              <option value="ipanema">Praia de Ipanema</option>
+              <option value="jardim">Jardim botânico</option>
+          </select>
+          <label>Selecione o local</label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="input-field col s12">
+            <input placeholder="Placeholder" id="status" type="text" class="validate">
+            <label for="status">Como está agora?</label>
+          </div>
+        </div>
+
+        <div class="row">
+          <a class="waves-effect waves-light btn js-send-status">Enviar status</a>
+        </div>
+      </form>
+    </div>
 </template>

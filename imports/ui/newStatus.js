@@ -4,7 +4,7 @@ import { FlowRouter } from 'meteor/kadira:flow-router';
 import './newStatus.html';
 
 Template.newStatus.events({
-  'click button'(event, instance) {
+  'click .js-send-status'(event, instance) {
     Meteor.call('statusUpdate',
       $('select[id=local]').val(),
       $('input[id=status]').val(),
@@ -14,7 +14,7 @@ Template.newStatus.events({
             console.error( error );
             return;
         }
-        FlowRouter.go('home');      
+        FlowRouter.go('home');
       }
     );
   },
