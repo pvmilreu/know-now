@@ -19,3 +19,12 @@ Template.newStatus.events({
     );
   },
 });
+
+Template.newStatus.onRendered(function () {
+  var self = this;
+  Meteor.setTimeout(function() {
+    self.$('select[id=local]').material_select();
+  }, 250);
+
+  
+});
