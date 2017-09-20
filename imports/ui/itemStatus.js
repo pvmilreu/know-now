@@ -4,7 +4,7 @@ import moment from 'moment';
 import './itemStatus.html';
 
 Template.itemStatus.helpers({
-  friendlyDate() {
+  friendlyDate() {  
     return moment(this.data).fromNow();
   },
 });

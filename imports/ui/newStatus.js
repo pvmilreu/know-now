@@ -5,12 +5,11 @@ import './newStatus.html';
 
 Template.newStatus.events({
   'click .js-send-status'(event, instance) {
-    if( $('select[id=local]').val() == null ) {
+    if( !$('select[id=local]').val() ) {
       alert("Escolha o local para reportar o status");
       return;
     }
-    if( $('input[id=status]').val() == null ||
-        $('input[id=status]').val() == "" ) {
+    if( !$('input[id=status]').val().trim() ) {
       alert("Informe como está o local agora preenchendo o seu status");
       return;
     }
@@ -30,10 +29,7 @@ Template.newStatus.events({
 });
 
 Template.newStatus.onRendered(function () {
-  var self = this;
-  Meteor.setTimeout(function() {
-    self.$('select[id=local]').material_select();
-  }, 250);
-
-  
+  Meteor.setTimeout(()=> {
+    this.$('select[id=local]').material_select();
+  }, 200);
 });
