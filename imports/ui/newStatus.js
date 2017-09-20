@@ -5,6 +5,15 @@ import './newStatus.html';
 
 Template.newStatus.events({
   'click .js-send-status'(event, instance) {
+    if( $('select[id=local]').val() == null ) {
+      alert("Escolha o local para reportar o status");
+      return;
+    }
+    if( $('input[id=status]').val() == null ||
+        $('input[id=status]').val() == "" ) {
+      alert("Informe como está o local agora preenchendo o seu status");
+      return;
+    }
     Meteor.call('statusUpdate',
       $('select[id=local]').val(),
       $('input[id=status]').val(),
